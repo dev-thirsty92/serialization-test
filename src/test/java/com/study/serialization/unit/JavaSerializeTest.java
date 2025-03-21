@@ -31,6 +31,7 @@ public class JavaSerializeTest {
     @Order(1)
     void testSerializedDataNotEmpty() {
 
+        log.info("Serialized userInfo = {}", new String(serializedMember));
         // 바이트 배열로 생성된 직렬화 데이터를 base64로 변환
         String base64Serialized = Base64.getEncoder().encodeToString(serializedMember);
         log.info("Serialized userInfo (Base64) = {}", base64Serialized);
