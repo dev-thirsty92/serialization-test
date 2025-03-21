@@ -13,6 +13,13 @@ java {
     }
 }
 
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+
 repositories {
     mavenCentral()
 }
@@ -20,6 +27,9 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    testImplementation("org.projectlombok:lombok")
+    testAnnotationProcessor("org.projectlombok:lombok")
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.boot:spring-boot-testcontainers'
     testImplementation 'org.testcontainers:junit-jupiter'
