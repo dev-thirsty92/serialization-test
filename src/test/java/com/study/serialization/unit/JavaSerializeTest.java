@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class SerializeTest {
+public class JavaSerializeTest {
 
     private byte[] serializedMember;
 
