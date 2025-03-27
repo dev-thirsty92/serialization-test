@@ -74,10 +74,8 @@ public class RedisSerializeTest {
     @DisplayName("ObjectMapper를 아래와 같이 설정하면 대상 객체의 class 정보가 생략되어 직렬화 된다.")
     void genericJackson2JsonRedisSerializerTest2() throws JsonProcessingException {
 
-        ObjectMapper objectMapper = JsonMapper.builder()
-                    .configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
-                    .build()
-                    .registerModule(new JavaTimeModule());
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.deactivateDefaultTyping();
 
         GenericJackson2JsonRedisSerializer serializer = new GenericJackson2JsonRedisSerializer();
         UserInfo targetObject = new UserInfo("THIRSTY", 1);
